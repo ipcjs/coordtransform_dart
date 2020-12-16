@@ -9,6 +9,8 @@ linter:
   rules:
     unnecessary_this: false
     slash_for_doc_comments: false
+    unnecessary_new: false
+    omit_local_variable_types: false
 #     - camel_case_types
 
 analyzer:
