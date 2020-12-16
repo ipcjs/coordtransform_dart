@@ -11,6 +11,7 @@ linter:
     slash_for_doc_comments: false
     unnecessary_new: false
     omit_local_variable_types: false
+    library_prefixes: false
 #     - camel_case_types
 
 analyzer:
