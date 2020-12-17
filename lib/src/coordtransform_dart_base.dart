@@ -1,5 +1,6 @@
 import './rectangle.dart';
 import 'dart:math' as Math;
+import 'package:meta/meta.dart';
 
 /**
  * 百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换的工具
@@ -8,6 +9,7 @@ import 'dart:math' as Math;
  * @author geosmart
  */
 class CoordinateTransformUtil {
+    CoordinateTransformUtil._();
 
     //China region - raw data
     static final List<Rectangle> REGION = [
@@ -30,18 +32,18 @@ class CoordinateTransformUtil {
             new Rectangle(73.124600, 35.398637, 77.948114, 29.529700),
     ];
 
-    /* private */ static double X_PI = 3.14159265358979324 * 3000.0 / 180.0;
+    @internal static double X_PI = 3.14159265358979324 * 3000.0 / 180.0;
 
     // π
-    /* private */ static double PI = 3.1415926535897932384626;
+    @internal static double PI = 3.1415926535897932384626;
 
     // 长半轴
-    /* private */ static double A = 6378245.0;
+    @internal static double A = 6378245.0;
 
     // 扁率
-    /* private */ static double EE = 0.00669342162296594323;
+    @internal static double EE = 0.00669342162296594323;
 
-    /* private */ static bool isInChina(double lng, double lat) {
+    @internal static bool isInChina(double lng, double lat) {
         for (Rectangle region in REGION) {
             if (region.contain(lng, lat)) {
                 for (Rectangle exclude in EXCLUDE) {
@@ -138,7 +140,7 @@ class CoordinateTransformUtil {
         return wgs84;
     }
 
-    /* private */ static List<double> transform(final double lng, final double lat) {
+    @internal static List<double> transform(final double lng, final double lat) {
         double dlat = transformLat(lng - 105.0, lat - 35.0);
         double dlng = transformLng(lng - 105.0, lat - 35.0);
         double radlat = lat / 180.0 * PI;
@@ -153,7 +155,7 @@ class CoordinateTransformUtil {
     /**
      * 纬度转换
      */
-    /* private */ static double transformLat(double lng, double lat) {
+    @internal static double transformLat(double lng, double lat) {
         double ret = -100.0 + 2.0 * lng + 3.0 * lat + 0.2 * lat * lat + 0.1 * lng * lat + 0.2 * Math
                 .sqrt(lng.abs());
         ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0;
@@ -165,7 +167,7 @@ class CoordinateTransformUtil {
     /**
      * 经度转换
      */
-    /* private */ static double transformLng(double lng, double lat) {
+    @internal static double transformLng(double lng, double lat) {
         double ret = 300.0 + lng + 2.0 * lat + 0.1 * lng * lng + 0.1 * lng * lat + 0.1 * Math
                 .sqrt(lng.abs());
         ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0;

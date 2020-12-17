@@ -12,6 +12,7 @@ linter:
     unnecessary_new: false
     omit_local_variable_types: false
     library_prefixes: false
+    use_function_type_syntax_for_parameters: false
 #     - camel_case_types
 
 analyzer:
