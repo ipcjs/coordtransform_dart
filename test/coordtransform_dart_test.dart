@@ -77,7 +77,7 @@ class P {
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
     if (!(o is P)) return false;
-    var other = (o as P);
+    var other = o;
     final _delta = math.min(delta, other.delta);
     return (point[0] - other.point[0]).abs() < _delta &&
         (point[1] - other.point[1]).abs() < _delta;
