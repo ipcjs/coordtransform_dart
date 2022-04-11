@@ -1,7 +1,5 @@
-import 'package:collection/collection.dart';
 import 'dart:math' as math;
 import 'package:test/test.dart';
-import 'dart:mirrors';
 import 'reflects.dart';
 
 import 'package:coordtransform_dart/coordtransform_dart.dart';
