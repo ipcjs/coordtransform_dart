@@ -1,5 +1,5 @@
 name: coordtransform_dart
-description: A starting point for Dart libraries or applications.
+description: Wgs84/Gcj02/Bd09 坐标系相互转换
 version: 1.0.0
 homepage: https://github.com/ipcjs/coordtransform_dart
 
