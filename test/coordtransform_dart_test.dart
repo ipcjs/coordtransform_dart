@@ -61,6 +61,31 @@ void main() {
       testAll([113.915547, 22.535697]);
     });
   });
+
+  group('printUrl', () {
+    test('wgs84 to bd09/gcj02', () {
+      final lat = 22.634503;
+      final lng = 114.035905;
+      printUrl([lng, lat], 'wgs84');
+      printUrl(CoordinateTransformUtil.wgs84ToBd09(lng, lat), 'bd09ll');
+      printUrl(CoordinateTransformUtil.wgs84ToGcj02(lng, lat), 'gcj02');
+    });
+  });
+}
+
+void printUrl(List<double> point, String coord) {
+  final lat = point[1];
+  final lng = point[0];
+  // open this url to preview location
+  print(
+    'http://api.map.baidu.com/marker'
+    '?location=$lat,$lng'
+    '&title=$coord'
+    '&content=beijing'
+    '&output=html'
+    '&coord_type=$coord'
+    '&src=test',
+  );
 }
 
 typedef List<double> _PointConverter(double lng, double lat);

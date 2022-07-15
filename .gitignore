@@ -13,3 +13,4 @@ build/
 doc/api/
 
 .vscode/
+.idea/
