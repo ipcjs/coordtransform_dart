@@ -1,13 +1,18 @@
 import 'dart:math' as math;
-import 'package:test/test.dart';
-import 'reflects.dart';
 
 import 'package:coordtransform_dart/coordtransform_dart.dart';
+import 'package:test/test.dart';
+
+import 'reflects.dart';
 
 void main() {
   group('CoordinateTransformUtil', () {
-    setUp(() {
-      print('setUp');
+    test('wgs84 to gcj02 to bd09', () {
+      final gcj02 =
+          CoordinateTransformUtil.wgs84ToGcj02(118.3013077, 32.2719040);
+      final bd09 = CoordinateTransformUtil.gcj02ToBd09(gcj02[0], gcj02[1]);
+      expect(gcj02, [118.30667898630848, 32.26987097293956]);
+      expect(bd09, [118.31309502519457, 32.276140342217744]);
     });
 
     test('compare with coordtransform.java', () {
@@ -84,7 +89,7 @@ void printUrl(List<double> point, String coord) {
     '&content=beijing'
     '&output=html'
     '&coord_type=$coord'
-    '&src=test',
+    '&src=github.ipcjs.dart',
   );
 }
 
