@@ -88,7 +88,7 @@ void printUrl(List<double> point, String coord) {
   );
 }
 
-typedef List<double> _PointConverter(double lng, double lat);
+typedef _PointConverter = List<double> Function(double lng, double lat);
 
 /// 比较点是否大致相等
 class P {
@@ -99,11 +99,11 @@ class P {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-    if (!(o is P)) return false;
+    if (o is! P) return false;
     var other = o;
-    final _delta = math.min(delta, other.delta);
-    return (point[0] - other.point[0]).abs() < _delta &&
-        (point[1] - other.point[1]).abs() < _delta;
+    final finalDelta = math.min(delta, other.delta);
+    return (point[0] - other.point[0]).abs() < finalDelta &&
+        (point[1] - other.point[1]).abs() < finalDelta;
   }
 
   @override

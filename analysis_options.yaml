@@ -1,10 +1,7 @@
-# Defines a default set of lint rules enforced for
-# projects at Google. For details and rationale,
-# see https://github.com/dart-lang/pedantic#enabled-lints.
-include: package:pedantic/analysis_options.yaml
+# https://pub.dev/packages/lints
+include: package:lints/recommended.yaml
 
-# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
-# Uncomment to specify additional rules.
+# https://dart.dev/tools/linter-rules
 linter:
   rules:
     unnecessary_this: false
@@ -13,6 +10,8 @@ linter:
     omit_local_variable_types: false
     library_prefixes: false
     use_function_type_syntax_for_parameters: false
+    constant_identifier_names: false
+    non_constant_identifier_names: false
 #     - camel_case_types
 
 analyzer:

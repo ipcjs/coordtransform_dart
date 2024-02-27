@@ -1,16 +1,15 @@
 name: coordtransform_dart
-description: Wgs84/Gcj02/Bd09 坐标系相互转换
-version: 1.0.0
+description: Transform coordinate systems between Wgs84/Gcj02/Bd09
+version: 1.0.1
 homepage: https://github.com/ipcjs/coordtransform_dart
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  meta: ^1.3.0
-#  path: ^1.7.0
+  meta: ^1.12.0
 
 dev_dependencies:
-  pedantic: ^1.11.0
-  test: ^1.16.5
+  lints: ^3.0.0
+  test: ^1.25.2
 
