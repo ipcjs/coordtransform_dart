@@ -1,13 +1,13 @@
 name: coordtransform_dart
 description: Transform coordinate systems between Wgs84/Gcj02/Bd09
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/ipcjs/coordtransform_dart
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
 
 dependencies:
-  meta: ^1.12.0
+  meta: ^1.0.0
 
 dev_dependencies:
   lints: ^3.0.0
