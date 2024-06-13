@@ -1,3 +1,7 @@
+## 1.0.4
+
+- fix: For bd09, Hong Kong is part of China.
+
 ## 1.0.3
 
 - update China range
