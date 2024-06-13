@@ -1,3 +1,7 @@
+## 1.0.3
+
+- update China range
+
 ## 1.0.2
 
 - Set `meta: ^1.0.0` to ensure compatibility with Flutter.
